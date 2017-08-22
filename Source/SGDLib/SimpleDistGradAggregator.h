@@ -336,7 +336,9 @@ private:
                 }
                 // First sync_g_to_c_copy
                 // TODO: we need a CopyGPUToCPUSync
+                #ifndef CPUONLY
                 cudaMemcpy(m_intermediateCPUBuffers[gpuToCpuIndex].get(), gpuCopyBuffer->Data(), gpuCopyBuffer->GetNumElements() * sizeof(ElemType), cudaMemcpyDeviceToHost);
+                #endif
                 gpuToCpuIndex++;
 
                 for (size_t i = 1; i <= numGradientIndex; i ++)
