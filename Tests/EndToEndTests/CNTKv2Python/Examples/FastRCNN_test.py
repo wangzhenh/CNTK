@@ -28,7 +28,7 @@ prepare_alexnet_v0_model()
 from install_data_and_model import create_grocery_mappings
 create_grocery_mappings(grocery_path)
 
-win35 = pytest.mark.skipif(not ((sys.platform == 'win32' and sys.version_info[:2] == (3,5)),
+win35 = pytest.mark.skipif(not (sys.platform == 'win32' and sys.version_info[:2] == (3,5)),
                            reason="it runs currently only in windows-py35 due to precompiled cython modules")
 # TODO NaN on M60?
 #win35_linux34 = pytest.mark.skipif(not ((sys.platform == 'win32' and sys.version_info[:2] == (3,5)) or
